@@ -14,7 +14,17 @@ export default Ember.Component.extend({
       ClassicEditor.create( document.querySelector( '#editor' ), {
         removePlugins: [ 'DiscourseUpload', 'AdvancedEditor'],
         html: true,
-        toolbarItems: [],
+        toolbarItems: ['bold', 'italic'],
+        toolbar: {
+      		items: [
+      			'bold',
+      			'italic',
+      			'link',
+      			'bulletedList',
+      			'numberedList',
+      			'blockQuote',
+      		]
+        },
         toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote' ]
         })
           .then( function(editor){
