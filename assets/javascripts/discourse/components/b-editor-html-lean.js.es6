@@ -15,21 +15,7 @@ export default Ember.Component.extend({
         removePlugins: [ 'DiscourseUpload', 'AdvancedEditor'],
         html: true,
         toolbarItems: [],
-        toolbar: {
-      		items: [
-      			'heading',
-      			'|',
-      			'bold',
-      			'italic',
-      			'link',
-      			'bulletedList',
-      			'numberedList',
-      			'blockQuote',
-      			'|',
-      			'undo',
-      			'redo',
-      		]
-      	},
+        toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote' ]
         })
           .then( function(editor){
             this.set("ckeditor", editor)
