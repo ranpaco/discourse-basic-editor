@@ -14,18 +14,22 @@ export default Ember.Component.extend({
       ClassicEditor.create( document.querySelector( '#editor' ), {
         removePlugins: [ 'DiscourseUpload', 'AdvancedEditor'],
         html: true,
-        toolbarItems: ['bold', 'italic'],
+        toolbarItems: [],
         toolbar: {
       		items: [
+      			'heading',
+      			'|',
       			'bold',
       			'italic',
       			'link',
       			'bulletedList',
       			'numberedList',
       			'blockQuote',
+      			'|',
+      			'undo',
+      			'redo',
       		]
-        },
-        toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote' ]
+      	},
         })
           .then( function(editor){
             this.set("ckeditor", editor)
